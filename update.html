@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update</title>
+</head>
+<body>
+<form method="POST" action="{{ url_for('update_entry', tele=entry.tele) }}">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ entry.uname }}">
+        <br>
+
+        <label for="work_mode">Blood Type:</label>
+        <select name="work_mode" id="work_mode">
+            <option selected >Choose...</option>
+            <option value="Online">work from home</option>
+            <option value="Offline">work from office</option>
+        </select>
+
+        <br>
+        <label for="tele">Telephone Number:</label>
+        <input type="text" id="tele" name="tele" value="{{ entry.tele }}" readonly>
+        <br>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" value="{{ entry.city }}">
+        <br>
+        <button type="submit">Update</button>
+    </form>
+
+</body>
+</html>
